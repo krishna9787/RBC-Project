@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="url" value="https://www.amazon.ca/"/>
+  <listeners>
+    <listener class-name="commonFunctions.ListenerClass"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.RBCProject.test.TC001_AmznKndlOrderTest">
+        <methods>
+          <include name="TC001base" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.RBCProject.test.TC001_AmznKndlOrderTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->

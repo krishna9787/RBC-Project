@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-10-23T01:57:58Z" name="Suite" finished-at="2018-10-23T01:58:25Z" duration-ms="27123">
+  <suite started-at="2018-10-23T02:48:15Z" name="Suite" finished-at="2018-10-23T02:48:45Z" duration-ms="30292">
     <groups>
     </groups>
-    <test started-at="2018-10-23T01:57:58Z" name="Katha" finished-at="2018-10-23T01:58:25Z" duration-ms="27123">
+    <test started-at="2018-10-23T02:48:15Z" name="ChromeTest" finished-at="2018-10-23T02:48:45Z" duration-ms="30292">
       <class name="com.RBCProject.test.TC001_AmznKndlOrderTest">
-        <test-method signature="baseTC001(java.lang.String, java.lang.String)[pri:0, instance:com.RBCProject.test.TC001_AmznKndlOrderTest@175b9425]" started-at="2018-10-23T01:57:59Z" name="baseTC001" finished-at="2018-10-23T01:58:25Z" duration-ms="26265" status="PASS">
+        <test-method signature="baseTC001(java.lang.String, java.lang.String)[pri:0, instance:com.RBCProject.test.TC001_AmznKndlOrderTest@175b9425]" started-at="2018-10-23T02:48:15Z" name="baseTC001" finished-at="2018-10-23T02:48:44Z" duration-ms="29164" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,6 +24,6 @@
           </reporter-output>
         </test-method> <!-- baseTC001 -->
       </class> <!-- com.RBCProject.test.TC001_AmznKndlOrderTest -->
-    </test> <!-- Katha -->
+    </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

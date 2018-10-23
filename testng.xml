@@ -5,13 +5,13 @@
 		<listener class-name="commonFunctions.ListenerClass" />
 	</listeners>
 	<parameter name="url" value="https://www.amazon.ca/" />
-	<test name="Katha">
+	<test name="ChromeTest">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.RBCProject.test.TC001_AmznKndlOrderTest" />
 		</classes>
 	</test> <!-- Test -->
-	<test name="Krishnadas">
+	<test name="FirefoxTest">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.RBCProject.test.TC001_AmznKndlOrderTest" />

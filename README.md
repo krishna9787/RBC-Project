@@ -7,12 +7,12 @@ and listener class methods.
 3. pageFunctions package has class files for each page functionality.
 
 Reporting
-Report folder(at project level) has report.html file which provides the status of the test run.
+1. Report folder(at project level) has report.html file which provides the status of the test run.
 
 TestNG xml
-1. File location: test-output>testng.xml
-2. parameter tag has browser and url value
-    browser values allowed "chrome" and "firefox"
+1. Cross browser testing and parallel testing have been inplemented
+2. File location: test-output>testng.xml
+3. parameter tag has browser and url value browser values allowed "chrome" and "firefox"
 
 Listner Class
 1. onStart method invokes methods before running TestNG Suite

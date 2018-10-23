@@ -12,11 +12,11 @@ public class ListenerClass implements ITestListener {
 
 	public void onFinish(ITestContext arg0) {
 		ExtentTestManager.endTestReports();
-		HandleDriver.endDriver(arg0.getName());
+		HandleDriver.endDriver(arg0.getCurrentXmlTest().getParameter("browser"));
 	}
 
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
+		ExtentReportsManager.initReporter(); // initializing ExtentReports for reporting
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
@@ -26,15 +26,15 @@ public class ListenerClass implements ITestListener {
 
 	public void onTestFailure(ITestResult testresult) {
 		ITestContext arg0 = testresult.getTestContext();
-		String browser = arg0.getName();
-		WebDriver driver = HandleDriver.getListnerDriver(browser);
+		String browser = arg0.getCurrentXmlTest().getParameter("browser");
+		WebDriver driver = HandleDriver.getDriver(browser);
 		// Take screenshot.
 		String base64Screenshot = "data:image/png;base64,"
 				+ ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 
 		// ExtentReports log and screenshot operation for failed tests.
-		ExtentTestManager.getListnerTest(browser).log(LogStatus.FAIL,
-				"Test Failed \t" + ExtentTestManager.getListnerTest(browser).addBase64ScreenShot(base64Screenshot));
+		ExtentTestManager.getTest(browser).log(LogStatus.FAIL,
+				"Test Failed \t" + ExtentTestManager.getTest(browser).addBase64ScreenShot(base64Screenshot));
 	}
 
 	public void onTestSkipped(ITestResult arg0) {
@@ -47,14 +47,14 @@ public class ListenerClass implements ITestListener {
 
 	public void onTestSuccess(ITestResult testresult) {
 		ITestContext arg0 = testresult.getTestContext();
-		String browser = arg0.getName();
-		WebDriver driver = HandleDriver.getListnerDriver(browser);
+		String browser = arg0.getCurrentXmlTest().getParameter("browser");
+		WebDriver driver = HandleDriver.getDriver(browser);
 		// Take screenshot.
 		String base64Screenshot = "data:image/png;base64,"
 				+ ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 		// ExtentReports log and screenshot operation for passed tests.
-		ExtentTestManager.getListnerTest(browser).log(LogStatus.PASS,
-				"Test Passed \t" + ExtentTestManager.getListnerTest(browser).addBase64ScreenShot(base64Screenshot));
+		ExtentTestManager.getTest(browser).log(LogStatus.PASS,
+				"Test Passed \t" + ExtentTestManager.getTest(browser).addBase64ScreenShot(base64Screenshot));
 	}
 
 }

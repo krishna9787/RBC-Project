@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.relevantcodes.extentreports.LogStatus;
 import commonFunctions.HandleDriver;
 import commonFunctions.ExtentTestManager;
+import commonFunctions.ExternalWaitLoadPage;
+
 import org.testng.Assert;
 
 public class SignInPage {
@@ -21,8 +23,11 @@ public class SignInPage {
 	WebElement email;
 	
 	//method to check if Email or Phone number is asked
-	public synchronized void signInVerification(String browser) {
+	public synchronized SignInPage signInVerification(String browser) throws Exception {
+		//call method to wait till page is loaded
+		ExternalWaitLoadPage.isPageLoaded(browser,email,"SignIn");
 		Assert.assertEquals(email.isDisplayed(), true);
 		ExtentTestManager.getTest(browser).log(LogStatus.PASS, "Email or Phone number is asked");
+		return this;
 	}
 }

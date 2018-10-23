@@ -8,6 +8,7 @@ import org.testng.Assert;
 import com.relevantcodes.extentreports.LogStatus;
 import commonFunctions.HandleDriver;
 import commonFunctions.ExtentTestManager;
+import commonFunctions.ExternalWaitLoadPage;
 
 public class AmazonHomePage {
 	private WebDriver driver;
@@ -23,16 +24,13 @@ public class AmazonHomePage {
 	@FindBy(css = ".nav-logo-link")
 	WebElement amazonicon;
 
-	//Method to verify if HomePage is displayed
-	public synchronized void isHomePageDispalyed(String browser) {
-		Assert.assertEquals(amazonicon.isDisplayed(), true);
-		ExtentTestManager.getTest(browser).log(LogStatus.PASS, "Amazon Homepage is displayed successfully");
-		}
-
-	//Method to verify if Shop By Department Link is present and to click it if displayed
-	public synchronized void clickShopByDept(String browser) {
+	// Method to verify if Shop By Department Link is present and to click it if displayed
+	public synchronized ShopByDeptPage clickShopByDept(String browser) throws Exception {
+		// call method to wait till page is loaded
+		ExternalWaitLoadPage.isPageLoaded(browser, amazonicon, "Amazon Home");
 		Assert.assertEquals(shopdeptlink.isDisplayed(), true);
 		shopdeptlink.click();
 		ExtentTestManager.getTest(browser).log(LogStatus.PASS, "Shop by Department link found and clicked");
+		return new ShopByDeptPage(browser);
 	}
 }

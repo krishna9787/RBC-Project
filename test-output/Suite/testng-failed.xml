@@ -5,7 +5,7 @@
   <listeners>
     <listener class-name="commonFunctions.ListenerClass"/>
   </listeners>
-  <test thread-count="2" parallel="tests" name="ChromeTest(failed)">
+  <test thread-count="2" parallel="tests" name="Katha(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.RBCProject.test.TC001_AmznKndlOrderTest">
@@ -14,5 +14,5 @@
         </methods>
       </class> <!-- com.RBCProject.test.TC001_AmznKndlOrderTest -->
     </classes>
-  </test> <!-- ChromeTest(failed) -->
+  </test> <!-- Katha(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -2,6 +2,7 @@ package commonFunctions;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class ExtentTestManager {
 	private static ExtentReports extent = ExtentReportsManager.getReporter();
@@ -10,7 +11,20 @@ public class ExtentTestManager {
 	private static ExtentTest testreport;
 
 	// Method to initialize ExtentTest
-	public static synchronized void initTestReports(String tcname, String tcdescription, String browser) {
+	public static synchronized void initTestReports(String tcname, String tcdescription, String browser) throws Exception {
+		//try-catch to handle incorrect browser name
+		try {
+			if (!browser.equalsIgnoreCase("chrome")) {
+				if(!browser.equalsIgnoreCase("firefox")){
+					testreport = extent.startTest(tcname, tcdescription);
+					testreport.log(LogStatus.FAIL, "Browser value is not correct");
+					throw new Exception("Browser value not correct");
+				}
+			}
+		}catch(Exception e) {
+			throw new Exception("Browser value not correct", e);
+		}
+		
 		if (browser.equalsIgnoreCase("chrome")) {
 			testreportchrome = extent.startTest(tcname, tcdescription);
 		} else if (browser.equalsIgnoreCase("firefox")) {
@@ -32,15 +46,4 @@ public class ExtentTestManager {
 		}
 		return testreport;
 	}
-
-	//method to return ExtentTest object to add logs and snapshot as per the ITestResult passed from Listner Class
-	public static synchronized ExtentTest getListnerTest(String browser) {
-		if (browser.equalsIgnoreCase("chrometest")) {
-			testreport = testreportchrome;
-		} else if (browser.equalsIgnoreCase("firefoxtest")) {
-			testreport = testreportfirefox;
-		}
-		return testreport;
-	}
-
 }

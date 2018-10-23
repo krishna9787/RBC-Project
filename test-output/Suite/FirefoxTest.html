@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>FirefoxTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Oct 21 16:10:24 EDT 2018</td>
+<td>Started on:</td><td>Mon Oct 22 20:54:05 EDT 2018</td>
 </tr>
-<tr><td>Total time:</td><td>27 seconds (27257 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (43 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,8 +76,70 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.RBCProject.test.TC001_AmznKndlOrderTest.TC001base()'><b>TC001base</b><br>Test class: com.RBCProject.test.TC001_AmznKndlOrderTest<br>Parameters: https://www.amazon.ca/, firefox</td>
-<td></td>
-<td>27</td>
+<td><div><pre>java.lang.NullPointerException
+	at commonFunctions.ExtentTestManager.initTestReports(ExtentTestManager.java:29)
+	at com.RBCProject.test.TC001_AmznKndlOrderTest.TC001base(TC001_AmznKndlOrderTest.java:15)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace650497509", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace650497509'><pre>java.lang.NullPointerException
+	at commonFunctions.ExtentTestManager.initTestReports(ExtentTestManager.java:29)
+	at com.RBCProject.test.TC001_AmznKndlOrderTest.TC001base(TC001_AmznKndlOrderTest.java:15)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+</pre></div></td>
+<td>0</td>
+<td>com.RBCProject.test.TC001_AmznKndlOrderTest@6bf0219d</td></tr>
+<tr>
+<td title='com.RBCProject.test.TC001_AmznKndlOrderTest.TC001base()'><b>TC001base</b><br>Test class: com.RBCProject.test.TC001_AmznKndlOrderTest</td>
+<td><div><pre>java.lang.NullPointerException
+	at commonFunctions.ListenerClass.onTestFailure(ListenerClass.java:33)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+... Removed 13 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace174536405", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace174536405'><pre>java.lang.NullPointerException
+	at commonFunctions.ListenerClass.onTestFailure(ListenerClass.java:33)
+	at org.testng.internal.TestListenerHelper.runTestListeners(TestListenerHelper.java:67)
+	at org.testng.internal.Invoker.runTestListeners(Invoker.java:1389)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:636)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+	at java.base/java.lang.Thread.run(Thread.java:844)
+</pre></div></td>
+<td>0</td>
 <td>com.RBCProject.test.TC001_AmznKndlOrderTest@6bf0219d</td></tr>
 </table><p>
 </body>

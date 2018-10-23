@@ -10,6 +10,7 @@ import org.testng.Assert;
 import com.relevantcodes.extentreports.LogStatus;
 import commonFunctions.HandleDriver;
 import commonFunctions.ExtentTestManager;
+import commonFunctions.ExternalWaitLoadPage;
 
 public class PaperwhiteAddCartPage {
 	private WebDriver driver;
@@ -25,10 +26,11 @@ public class PaperwhiteAddCartPage {
 
 	@FindBy(css = "#add-to-cart-button")
 	WebElement addtocartbutton;
-
+	
 	//Method to verify if Quantity DropDown is present; select quantity as 2; verify Add to Cart button is present and to click it if displayed
-	public synchronized void addToCart(String browser) {
-		driver = HandleDriver.getDriver(browser);
+	public synchronized AddToOrderPage addToCart(String browser) throws Exception {
+		//call method to wait till page is loaded
+		ExternalWaitLoadPage.isPageLoaded(browser,selquantity,"Paperwhite Add to Cart");
 		Assert.assertEquals(selquantity.isDisplayed(), true);
 		Select s = new Select(selquantity);
 		s.selectByValue("2");
@@ -36,5 +38,6 @@ public class PaperwhiteAddCartPage {
 		Assert.assertEquals(addtocartbutton.isDisplayed(), true);
 		addtocartbutton.click();
 		ExtentTestManager.getTest(browser).log(LogStatus.PASS, "Add to Cart Link Clicked");
+		return new AddToOrderPage(browser);
 	}
 }

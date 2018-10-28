@@ -1,4 +1,4 @@
-package commonFunctions;
+package commonfunctions;
 
 import com.relevantcodes.extentreports.ExtentReports;
 
@@ -14,5 +14,10 @@ public class ExtentReportsManager {
 	public synchronized static void initReporter() {
 		extent = new ExtentReports("./Report/report.html", true);
 
+	}
+	
+	//Write result to file
+	public static synchronized void endTestReports() {
+		extent.flush();
 	}
 }

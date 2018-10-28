@@ -1,4 +1,4 @@
-package commonFunctions;
+package commonfunctions;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -11,12 +11,12 @@ import com.relevantcodes.extentreports.LogStatus;
 public class ListenerClass implements ITestListener {
 
 	public void onFinish(ITestContext arg0) {
-		ExtentTestManager.endTestReports();
-		HandleDriver.endDriver(arg0.getCurrentXmlTest().getParameter("browser"));
+		ExtentReportsManager.endTestReports();
 	}
 
+	// initializing ExtentReports for reporting
 	public void onStart(ITestContext context) {
-		ExtentReportsManager.initReporter(); // initializing ExtentReports for reporting
+		ExtentReportsManager.initReporter(); 
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult arg0) {
@@ -41,8 +41,16 @@ public class ListenerClass implements ITestListener {
 		// TODO Auto-generated method stub
 	}
 
-	public void onTestStart(ITestResult arg0) {
-		// TODO Auto-generated method stub
+	public void onTestStart(ITestResult testresult) {
+		ITestContext arg0 = testresult.getTestContext();
+		String browser = arg0.getCurrentXmlTest().getParameter("browser");
+		// initializing ExtentTest for adding logs and screenshot
+		try {
+			ExtentTestManager.initTestReports("signInPageVerification " + browser, browser);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void onTestSuccess(ITestResult testresult) {

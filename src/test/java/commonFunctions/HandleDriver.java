@@ -1,4 +1,4 @@
-package commonFunctions;
+package commonfunctions;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +12,9 @@ public class HandleDriver {
 	private static WebDriver driverfirefox;
 	private static WebDriver driver;
 
-	//method to initialize browser
+	//method to initialize Webdriver
 	public static synchronized WebDriver initDriver(String url, String browser) throws Exception {
+		
 		//try-catch for invalid System.setProperty path
 		try {
 			if (browser.equalsIgnoreCase("chrome")) {
@@ -29,6 +30,7 @@ public class HandleDriver {
 			ExtentTestManager.getTest(browser).log(LogStatus.FAIL, "Driver not Loaded");
 			throw new Exception("Driver not Loaded", e);
 		}
+		
 		// try-catch for invalid URL
 		try {
 			driver.get(url);
@@ -44,6 +46,7 @@ public class HandleDriver {
 		return driver;
 	}
 
+	//method to return Webdriver
 	public static synchronized WebDriver getDriver(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			driver = driverchrome;
@@ -53,12 +56,11 @@ public class HandleDriver {
 		return driver;
 	}
 
+	//method to close browser
 	public static synchronized void endDriver(String browser){
 		if (browser.equalsIgnoreCase("chrome")) {
-			driverchrome.close();
 			driverchrome.quit();
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			driverfirefox.close();
 			driverfirefox.quit();
 
 		}

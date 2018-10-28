@@ -1,13 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-10-23T02:48:15Z" name="Suite" finished-at="2018-10-23T02:48:45Z" duration-ms="30292">
+  <suite started-at="2018-10-28T05:04:39Z" name="Suite" finished-at="2018-10-28T05:05:15Z" duration-ms="35459">
     <groups>
     </groups>
-    <test started-at="2018-10-23T02:48:15Z" name="ChromeTest" finished-at="2018-10-23T02:48:45Z" duration-ms="30292">
-      <class name="com.RBCProject.test.TC001_AmznKndlOrderTest">
-        <test-method signature="baseTC001(java.lang.String, java.lang.String)[pri:0, instance:com.RBCProject.test.TC001_AmznKndlOrderTest@175b9425]" started-at="2018-10-23T02:48:15Z" name="baseTC001" finished-at="2018-10-23T02:48:44Z" duration-ms="29164" status="PASS">
+    <test started-at="2018-10-28T05:04:39Z" name="FirefoxTest" finished-at="2018-10-28T05:05:14Z" duration-ms="34782">
+      <class name="testcases.GuestPurchaseOrderTest">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-28T05:04:40Z" name="setUp" finished-at="2018-10-28T05:04:47Z" duration-ms="7673" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.amazon.ca/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="signInPageVerification(java.lang.String, java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-28T05:04:47Z" name="signInPageVerification" finished-at="2018-10-28T05:05:13Z" duration-ms="25677" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.amazon.ca/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInPageVerification -->
+        <test-method is-config="true" signature="teardown(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-28T05:05:13Z" name="teardown" finished-at="2018-10-28T05:05:14Z" duration-ms="927" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testcases.GuestPurchaseOrderTest -->
+    </test> <!-- FirefoxTest -->
+    <test started-at="2018-10-28T05:04:39Z" name="ChromeTest" finished-at="2018-10-28T05:05:15Z" duration-ms="35459">
+      <class name="testcases.GuestPurchaseOrderTest">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-28T05:04:40Z" name="setUp" finished-at="2018-10-28T05:04:57Z" duration-ms="16793" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -22,8 +69,35 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- baseTC001 -->
-      </class> <!-- com.RBCProject.test.TC001_AmznKndlOrderTest -->
+        </test-method> <!-- setUp -->
+        <test-method signature="signInPageVerification(java.lang.String, java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-28T05:04:57Z" name="signInPageVerification" finished-at="2018-10-28T05:05:14Z" duration-ms="17746" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.amazon.ca/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInPageVerification -->
+        <test-method is-config="true" signature="teardown(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-28T05:05:15Z" name="teardown" finished-at="2018-10-28T05:05:15Z" duration-ms="143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testcases.GuestPurchaseOrderTest -->
     </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

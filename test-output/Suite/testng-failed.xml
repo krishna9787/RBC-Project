@@ -3,16 +3,18 @@
 <suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="url" value="https://www.amazon.ca/"/>
   <listeners>
-    <listener class-name="commonFunctions.ListenerClass"/>
+    <listener class-name="commonfunctions.ListenerClass"/>
   </listeners>
-  <test thread-count="2" parallel="tests" name="Katha(failed)">
-    <parameter name="browser" value="chrome"/>
+  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.RBCProject.test.TC001_AmznKndlOrderTest">
+      <class name="testcases.GuestPurchaseOrderTest">
         <methods>
-          <include name="TC001base" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="signInPageVerification" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.RBCProject.test.TC001_AmznKndlOrderTest -->
+      </class> <!-- testcases.GuestPurchaseOrderTest -->
     </classes>
-  </test> <!-- Katha(failed) -->
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

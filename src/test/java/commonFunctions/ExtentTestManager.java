@@ -12,27 +12,21 @@ public class ExtentTestManager {
 
 	// Method to initialize ExtentTest
 	public static synchronized void initTestReports(String tcname, String browser) throws Exception {
-		//try-catch to handle incorrect browser name
-		try {
-			if (!browser.equalsIgnoreCase("chrome")) {
-				if(!browser.equalsIgnoreCase("firefox")){
-					testreport = extent.startTest(tcname);
-					testreport.log(LogStatus.FAIL, "Browser value is not correct");
-					throw new Exception("Browser value not correct");
-				}
-			}
-		}catch(Exception e) {
-			throw new Exception("Browser value not correct", e);
-		}
-		
+		// throws exception to handle correct browser name
 		if (browser.equalsIgnoreCase("chrome")) {
 			testreportchrome = extent.startTest(tcname);
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			testreportfirefox = extent.startTest(tcname);
+		} else if (!browser.equalsIgnoreCase("chrome")) {
+			if (!browser.equalsIgnoreCase("firefox")) {
+				testreport = extent.startTest(tcname);
+				testreport.log(LogStatus.FAIL, "Browser value is not correct");
+				throw new Exception("Browser value not correct");
+			}
 		}
 	}
 
-	//method to return ExtentTest object
+	// method to return ExtentTest object
 	public static synchronized ExtentTest getTest(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			testreport = testreportchrome;

@@ -2,49 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-10-29T01:53:33Z" name="Suite" finished-at="2018-10-29T01:54:20Z" duration-ms="46672">
+  <suite started-at="2018-10-29T03:49:02Z" name="Suite" finished-at="2018-10-29T03:49:37Z" duration-ms="34955">
     <groups>
     </groups>
-    <test started-at="2018-10-29T01:53:33Z" name="ChromeTest" finished-at="2018-10-29T01:54:03Z" duration-ms="30282">
+    <test started-at="2018-10-29T03:49:02Z" name="FirefoxTest" finished-at="2018-10-29T03:49:37Z" duration-ms="34821">
       <class name="testcases.GuestPurchaseOrderTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-29T01:53:33Z" name="setUp" finished-at="2018-10-29T01:53:46Z" duration-ms="12734" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="signInPageVerification(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-29T01:53:46Z" name="signInPageVerification" finished-at="2018-10-29T01:54:03Z" duration-ms="16687" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- signInPageVerification -->
-        <test-method is-config="true" signature="teardown(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-29T01:54:03Z" name="teardown" finished-at="2018-10-29T01:54:03Z" duration-ms="213" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- testcases.GuestPurchaseOrderTest -->
-    </test> <!-- ChromeTest -->
-    <test started-at="2018-10-29T01:53:33Z" name="FirefoxTest" finished-at="2018-10-29T01:54:20Z" duration-ms="46672">
-      <class name="testcases.GuestPurchaseOrderTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-29T01:53:33Z" name="setUp" finished-at="2018-10-29T01:53:39Z" duration-ms="5395" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-29T03:49:03Z" name="setUp" finished-at="2018-10-29T03:49:17Z" duration-ms="14892" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="signInPageVerification(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-29T01:53:39Z" name="signInPageVerification" finished-at="2018-10-29T01:54:19Z" duration-ms="40206" status="PASS">
+        <test-method signature="signInPageVerification(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-29T03:49:17Z" name="signInPageVerification" finished-at="2018-10-29T03:49:36Z" duration-ms="18730" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signInPageVerification -->
-        <test-method is-config="true" signature="teardown(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-29T01:54:19Z" name="teardown" finished-at="2018-10-29T01:54:20Z" duration-ms="718" status="PASS">
+        <test-method is-config="true" signature="teardown(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@78ffe6dc]" started-at="2018-10-29T03:49:36Z" name="teardown" finished-at="2018-10-29T03:49:37Z" duration-ms="650" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -79,5 +42,42 @@
         </test-method> <!-- teardown -->
       </class> <!-- testcases.GuestPurchaseOrderTest -->
     </test> <!-- FirefoxTest -->
+    <test started-at="2018-10-29T03:49:02Z" name="ChromeTest" finished-at="2018-10-29T03:49:37Z" duration-ms="34955">
+      <class name="testcases.GuestPurchaseOrderTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-29T03:49:03Z" name="setUp" finished-at="2018-10-29T03:49:08Z" duration-ms="5004" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="signInPageVerification(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-29T03:49:08Z" name="signInPageVerification" finished-at="2018-10-29T03:49:36Z" duration-ms="28396" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signInPageVerification -->
+        <test-method is-config="true" signature="teardown(java.lang.String)[pri:0, instance:testcases.GuestPurchaseOrderTest@7c83dc97]" started-at="2018-10-29T03:49:36Z" name="teardown" finished-at="2018-10-29T03:49:37Z" duration-ms="610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- testcases.GuestPurchaseOrderTest -->
+    </test> <!-- ChromeTest -->
   </suite> <!-- Suite -->
 </testng-results>

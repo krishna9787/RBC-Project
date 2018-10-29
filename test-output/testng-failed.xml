@@ -11,21 +11,9 @@
         <methods>
           <include name="setUp"/>
           <include name="teardown"/>
-          <include name="signInPageVerification"/>
+          <include name="signInPageVerification" invocation-numbers="0"/>
         </methods>
       </class> <!-- testcases.GuestPurchaseOrderTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
-  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="testcases.GuestPurchaseOrderTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="teardown"/>
-          <include name="signInPageVerification"/>
-        </methods>
-      </class> <!-- testcases.GuestPurchaseOrderTest -->
-    </classes>
-  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

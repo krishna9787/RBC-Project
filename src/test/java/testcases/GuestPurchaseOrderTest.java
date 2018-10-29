@@ -11,9 +11,9 @@ import pages.SignInPage;
 
 public class GuestPurchaseOrderTest extends AbstractTest{
 	
-	@Parameters({ "url", "browser" })
+	@Parameters({"browser"}) //browser value is passed in every method to handle parallel browser testing
 	@Test
-	public synchronized void signInPageVerification(String url, String browser) throws Exception {
+	public synchronized void signInPageVerification(String browser) throws Exception {
 		AmazonHomePage ahp = new AmazonHomePage(browser);
 		
 		ShopByDeptPage sdp = ahp.navigateToShopByDptPage(browser);

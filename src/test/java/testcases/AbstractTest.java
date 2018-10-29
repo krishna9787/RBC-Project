@@ -6,13 +6,13 @@ import org.testng.annotations.Parameters;
 import commonfunctions.HandleDriver;
 
 public class AbstractTest {
-	@Parameters({ "url", "browser" })
+	@Parameters({"browser"})
 	@BeforeClass
-	public synchronized void setUp(String url, String browser) throws Exception {
-		HandleDriver.initDriver(url, browser);
+	public synchronized void setUp(String browser) throws Exception {
+		HandleDriver.initDriver(browser);
 	}
 
-	@Parameters({ "browser" })
+	@Parameters({"browser"})
 	@AfterClass
 	public synchronized void teardown(String browser) {
 		HandleDriver.endDriver(browser);

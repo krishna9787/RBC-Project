@@ -1,23 +1,17 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import com.relevantcodes.extentreports.LogStatus;
-
 import commonfunctions.ExtentTestManager;
-import commonfunctions.ExternalWaitLoadPage;
-import commonfunctions.HandleDriver;
 
-public class KindlePaperwhiteProductPage {
+public class KindlePaperwhiteProductPage extends AbstractPage {
 
 	// Constructor
 	public KindlePaperwhiteProductPage(String browser) {
-		WebDriver driver = HandleDriver.getDriver(browser);
-		PageFactory.initElements(driver, this);
+		super(browser);
 	}
 
 	// Locators
@@ -33,7 +27,7 @@ public class KindlePaperwhiteProductPage {
 	// Method to check if Kindle Paperwhite page is loaded
 	public synchronized void isKindlePaperwhitePageLoaded(String browser) throws Exception {
 		// call method to wait till page is loaded
-		ExternalWaitLoadPage.isPageLoaded(browser, kindlepaperwhitetitle, "Kindle Paperwhite Product");
+		isPageLoaded(browser, kindlepaperwhitetitle, "Kindle Paperwhite Product");
 
 		// verify if page is Kindle Paperwhite
 		if (!kindlepaperwhitetitle.getText().contains("Kindle Paperwhite")) {

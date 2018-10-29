@@ -1,12 +1,22 @@
-package commonfunctions;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class ExternalWaitLoadPage {
+import commonfunctions.ExtentTestManager;
+import commonfunctions.HandleDriver;
+
+public class AbstractPage {
+	
+	public AbstractPage(String browser) {
+		WebDriver driver = HandleDriver.getDriver(browser);
+		PageFactory.initElements(driver, this);
+	}
+	
 	// generic method to handle page loading
 	public static synchronized void isPageLoaded(String browser, WebElement we, String pagename) throws Exception {
 		WebDriver driver = HandleDriver.getDriver(browser);

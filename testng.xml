@@ -4,7 +4,6 @@
 	<listeners>
 		<listener class-name="commonfunctions.ListenerClass" />
 	</listeners>
-	<parameter name="url" value="https://www.amazon.ca/" />
 	<test name="ChromeTest">
 		<parameter name="browser" value="chrome" />
 		<classes>

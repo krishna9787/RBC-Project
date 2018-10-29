@@ -4,16 +4,16 @@
   <listeners>
     <listener class-name="commonfunctions.ListenerClass"/>
   </listeners>
-  <test thread-count="2" parallel="tests" name="ChromeTest(failed)">
-    <parameter name="browser" value="chrome"/>
+  <test thread-count="2" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="firefo"/>
     <classes>
       <class name="testcases.GuestPurchaseOrderTest">
         <methods>
           <include name="setUp"/>
           <include name="teardown"/>
-          <include name="signInPageVerification" invocation-numbers="0"/>
+          <include name="signInPageVerification"/>
         </methods>
       </class> <!-- testcases.GuestPurchaseOrderTest -->
     </classes>
-  </test> <!-- ChromeTest(failed) -->
+  </test> <!-- FirefoxTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

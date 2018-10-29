@@ -9,6 +9,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.relevantcodes.extentreports.LogStatus;
 
+import junit.framework.Assert;
+
 public class HandleDriver {
 	private static WebDriver driverchrome;
 	private static WebDriver driverfirefox;
@@ -48,22 +50,24 @@ public class HandleDriver {
 				System.setProperty("webdriver.gecko.driver", firefoxproperty);
 				driverfirefox = new FirefoxDriver();
 				driver = driverfirefox;
+			} else {
+				ExtentTestManager.getTest(browser).log(LogStatus.FAIL, browser + " browser value not correct");
+				Assert.fail();
+				//throw if browser value is not correct
+				throw new Exception("Browser value not correct: " + browser);
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			ExtentTestManager.getTest(browser).log(LogStatus.FAIL, "Driver not Loaded");
-			throw new Exception("Driver not Loaded", e);
+			throw new Exception("Driver not Loaded: " + browser);
 		}
 		
 		// try-catch for invalid URL
-		try {
-			driver.get(url);
-			if(!driver.getTitle().contains("Amazon.ca")) {
-				throw new Exception("URL not correct");
-			}
-		}catch(Exception e) {
-			ExtentTestManager.getTest(browser).log(LogStatus.FAIL, "URL not correct");
-			throw new Exception("URL not correct", e);
+		driver.get(url);
+		if(!driver.getTitle().contains("Amazon.ca")) {
+			Assert.fail();
+			throw new Exception("URL not correct");
 		}
+
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;

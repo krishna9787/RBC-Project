@@ -1,5 +1,7 @@
 package pages;
 
+import static org.testng.Assert.fail;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -9,6 +11,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import commonfunctions.ExtentTestManager;
 import commonfunctions.HandleDriver;
+import junit.framework.Assert;
 
 public class AbstractPage {
 	
@@ -26,6 +29,7 @@ public class AbstractPage {
 			wait.until(ExpectedConditions.visibilityOf(we));
 		} catch (Exception e) {
 			ExtentTestManager.getTest(browser).log(LogStatus.FAIL, pagename + " page is not loaded successfully");
+			Assert.fail();
 			throw new Exception(pagename + " page is not loaded successfully", e);
 		}
 		

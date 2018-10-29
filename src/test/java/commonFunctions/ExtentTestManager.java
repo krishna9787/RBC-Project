@@ -2,7 +2,6 @@ package commonfunctions;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 
 public class ExtentTestManager {
 	private static ExtentReports extent = ExtentReportsManager.getReporter();
@@ -17,12 +16,8 @@ public class ExtentTestManager {
 			testreportchrome = extent.startTest(tcname);
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			testreportfirefox = extent.startTest(tcname);
-		} else if (!browser.equalsIgnoreCase("chrome")) {
-			if (!browser.equalsIgnoreCase("firefox")) {
-				testreport = extent.startTest(tcname);
-				testreport.log(LogStatus.FAIL, "Browser value is not correct");
-				throw new Exception("Browser value not correct");
-			}
+		} else {
+			testreport = extent.startTest(tcname);
 		}
 	}
 
